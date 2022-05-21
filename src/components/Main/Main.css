@@ -4,14 +4,14 @@
   flex-direction: row-reverse;
   align-items: flex-end;
   justify-content: space-between;
-  padding: 2em 1em;
+  padding: 0 1em 2em;
   flex-wrap: wrap;
 }
 
 .Instruction {
   font-size: 2em;
-  text-align: left;
   margin-top: 0.5em;
+  flex-grow: 1;
 }
 
 .TabList {
@@ -33,7 +33,6 @@
 }
 
 .Content {
-  flex: 1;
   width: 100%;
   height: 100%;
   border: #becadf solid 0.2em;
@@ -42,52 +41,37 @@
   justify-content: center;
   align-items: center;
   overflow: scroll;
-  padding: 5em;
+  padding: 7.5%;
 }
 
 .FontList {
-  display: grid;
-  grid-template-columns: 4fr 7fr;
-  grid-template-rows: 1fr 1fr;
-  grid-row-gap: 2em;
-  grid-column-gap: 4em;
-  align-self: flex-start;
   font-size: 1.5em;
+  display: flex;
+  flex-direction: column;
 }
 
 .FontListItem {
   display: flex;
+  align-items: flex-start;
+  margin-bottom: 5%;
+  max-width: 100%;
 }
 
-.FontListItem:first-child {
-  flex-direction: column;
-  grid-area: 1/1/3/2;
+.FontListItem:last-child {
+  margin-bottom: 0;
 }
 
 .FontListItem > ul {
   list-style: none;
-  margin-left: 1em;
+  margin: 0;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
   -ms-hyphens: auto;
   hyphens: auto;
-}
-
-.FontListItem:first-child > ul {
-  margin-left: 0em;
-}
-
-ul li::before {
-  content: "\2022";
-  color: #96a1b2;
-  font-weight: bold;
-  display: inline-block;
-  width: 0.5em;
-  margin-left: -0.5em;
-  font-size: 2em;
-  position: relative;
-  top: 0.1em;
-  line-height: 1em;
+  flex: 1;
+  width: 65%;
+  max-width: calc(100% - 2em);
+  overflow-x: hidden;
 }
 
 .color-board {
@@ -99,15 +83,9 @@ ul li::before {
   font-size: 1.5em;
   font-weight: 700;
   aspect-ratio: 1 / 1;
-  max-width: 5em;
-  max-height: 5em;
-}
-
-.FontListItem:first-child .color-board {
-  width: 80%;
-  font-size: 2em;
-  max-width: none;
-  max-height: none;
+  width: 35%;
+  min-width: 2em;
+  min-height: 2em;
 }
 
 .color-board > div {
@@ -134,4 +112,53 @@ ul li::before {
 .TextBox {
   max-width: 25em;
   font-size: 1.2em;
+}
+
+ul li::before {
+  content: "\2022";
+  color: #96a1b2;
+  font-weight: bold;
+  display: inline-block;
+  width: 0.5em;
+  margin-left: -0.5em;
+  font-size: 2em;
+  position: relative;
+  top: 0.1em;
+  line-height: 1em;
+}
+
+@media (min-width: 768px) {
+  .FontListItem > ul {
+    margin-left: 1em;
+  }
+
+  .FontList {
+    display: grid;
+    grid-template-columns: 4fr 7fr;
+    grid-template-rows: 1fr 1fr;
+    grid-row-gap: 15%;
+    grid-column-gap: 15%;
+  }
+
+  .FontListItem:first-child {
+    flex-direction: column;
+    grid-area: 1/1/3/2;
+  }
+
+  .FontListItem:first-child .color-board {
+    width: 80%;
+    font-size: 2em;
+    max-width: none;
+    max-height: none;
+  }
+
+  .FontListItem {
+    margin-bottom: 0;
+  }
+
+  .FontListItem:first-child > ul {
+    margin-left: 0em;
+    width: auto;
+    padding-left: 0.9em;
+  }
 }
