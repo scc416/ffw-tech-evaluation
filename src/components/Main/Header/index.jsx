@@ -5,11 +5,8 @@ import { checkIfIsFonts } from "helpers";
 import Instruction from "./Instruction";
 
 const Header = () => {
-  const {
-    state: { tabs, tabId },
-  } = useContext(StateContext);
-
-  const showInstructions = checkIfIsFonts(tabs[tabId]);
+  const { state } = useContext(StateContext);
+  const showInstructions = checkIfIsFonts(state);
 
   return (
     <div className="Header">

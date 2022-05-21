@@ -41,7 +41,7 @@ const StateProvider = (props) => {
   };
 
   const fontClickHandler = (fontId) => {
-    dispatch({ type: CLICK_TAB, payload: { fontId } });
+    dispatch({ type: CLICK_FONT, payload: { fontId } });
   };
 
   return (

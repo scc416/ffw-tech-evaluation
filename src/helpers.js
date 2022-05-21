@@ -1,7 +1,11 @@
 import axios from "axios";
 import { SHOW_ERROR, FETCH_DATA, endPoint } from "constants";
 
-export const checkIfIsFonts = ({ content }) => Array.isArray(content);
+export const checkIfIsFonts = (state) => {
+  const { tabs, tabId } = state;
+  const { content } = tabs[tabId];
+  return Array.isArray(content);
+};
 
 const formatData = (tabs, content, label) => {
   if (Array.isArray(content)) {

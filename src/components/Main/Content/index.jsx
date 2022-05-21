@@ -4,17 +4,15 @@ import { checkIfIsFonts } from "helpers";
 import FontList from "./FontList";
 
 const Content = () => {
-  const {
-    state: { tabs, tabId },
-    fontClickHandler,
-  } = useContext(StateContext);
+  const { state } = useContext(StateContext);
+  const { tabs, tabId } = state;
 
-  const details = tabs[tabId];
-  const isFonts = checkIfIsFonts(details);
-  const { content } = details;
+  const isFonts = checkIfIsFonts(state);
+  const { content } = tabs[tabId];
+  
   return (
     <div className="Content">
-      {isFonts && <FontList {...{ content, fontClickHandler }} />}
+      {isFonts && <FontList content={content} />}
       {!isFonts && content}
     </div>
   );

@@ -4,12 +4,11 @@ const FontListItem = ({
   colorBlindLabel,
   label,
   clickHandler,
+  selected,
 }) => {
-  return (
-    <div className="FontListItem" onClick={clickHandler}>
-      {abbr}
-    </div>
-  );
+  const className = selected ? "FontListItem selected" : "FontListItem";
+
+  return <div {...{ className, onClick: clickHandler }}>{abbr}</div>;
 };
 
 export default FontListItem;
