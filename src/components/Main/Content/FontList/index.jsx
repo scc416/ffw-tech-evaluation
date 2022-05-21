@@ -13,7 +13,7 @@ const FontList = ({ content }) => {
       {...{
         ...font,
         key: i,
-        clickHandler: (i) => fontClickHandler(i),
+        clickHandler: () => fontClickHandler(i),
         selected: fontId === i,
       }}
     />

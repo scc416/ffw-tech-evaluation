@@ -50,3 +50,7 @@
   text-align: center;
   color: red;
 }
+
+.selected {
+  opacity: 0.5;
+}
