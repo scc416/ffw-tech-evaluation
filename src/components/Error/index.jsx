@@ -1,6 +1,5 @@
 const Error = ({ error }) => {
-  console.log(error)
-  return <>ERROR{error}</>;
+  return <div className="Error">{error}. Please try again.</div>;
 };
 
 export default Error;

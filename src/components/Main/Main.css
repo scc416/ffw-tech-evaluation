@@ -45,3 +45,8 @@
 .FontListItem {
   display: flex;
 }
+
+.Error {
+  text-align: center;
+  color: red;
+}
