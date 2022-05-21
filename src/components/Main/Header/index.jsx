@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { StateContext } from "StateContext";
 import TabList from "./TabList";
-import { checkIfShowInstruction } from "helpers";
+import { checkIfIsFonts } from "helpers";
 import Instruction from "./Instruction";
 
 const Header = () => {
@@ -9,7 +9,7 @@ const Header = () => {
     state: { tabs, tabId },
   } = useContext(StateContext);
 
-  const showInstructions = checkIfShowInstruction(tabs[tabId]);
+  const showInstructions = checkIfIsFonts(tabs[tabId]);
 
   return (
     <div className="Header">

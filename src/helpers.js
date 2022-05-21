@@ -1,1 +1,1 @@
-export const checkIfShowInstruction = ({ content }) => Array.isArray(content);
+export const checkIfIsFonts = ({ content }) => Array.isArray(content);
