@@ -1,8 +1,8 @@
-import React, { useReducer, useEffect } from "react";
+import { useReducer, useEffect, createContext } from "react";
 import { initialState, SHOW_ERROR, FETCH_DATA, CLICK_TAB } from "constants";
 import { fetchData } from "helpers";
 
-const StateContext = React.createContext({ state: initialState });
+const StateContext = createContext({ state: initialState });
 
 const StateProvider = (props) => {
   const reducers = {

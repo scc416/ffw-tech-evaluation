@@ -1,5 +1,5 @@
 export const instruction = "Please select one font";
-export const endpoint = "/tabs";
+export const endPoint = "/tabs";
 
 export const initialState = { error: null, tabs: null, tabId: 0, fontId: null };
 
