@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import "./App.css";
-import { StateContext } from "./StateContext";
+import "App.css";
+import { StateContext } from "StateContext";
 
 function App() {
   const { state } = useContext(StateContext);

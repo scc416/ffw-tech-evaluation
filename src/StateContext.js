@@ -1,5 +1,5 @@
 import React, { useReducer } from "react";
-import { initialState } from "./constants";
+import { initialState } from "constants";
 
 const StateContext = React.createContext({ state: initialState });
 

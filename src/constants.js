@@ -1,1 +1,1 @@
-export const initialState = { loading: true, hi: "HELLO" };
+export const initialState = { loading: true };
