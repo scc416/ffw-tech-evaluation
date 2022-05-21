@@ -14,7 +14,7 @@ header {
   flex-grow: 1;
 }
 
-.TabList {
+nav {
   display: flex;
   text-transform: uppercase;
   font-weight: 700;

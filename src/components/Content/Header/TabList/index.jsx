@@ -18,7 +18,7 @@ const TabList = () => {
       }}
     />
   ));
-  return <div className="TabList">{lst}</div>;
+  return <nav>{lst}</nav>;
 };
 
 export default TabList;
