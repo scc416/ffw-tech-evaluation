@@ -1,5 +1,5 @@
 import axios from "axios";
-import { initialState, SHOW_ERROR, FETCH_DATA, CLICK_TAB } from "constants";
+import { SHOW_ERROR, FETCH_DATA } from "constants";
 
 export const checkIfIsFonts = ({ content }) => Array.isArray(content);
 
