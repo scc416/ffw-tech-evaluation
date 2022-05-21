@@ -16,3 +16,11 @@
 .Instruction {
   font-size: 1.5em;
 }
+
+.tab {
+  color: #fd530c;
+}
+
+.active {
+  color: #becadf;
+}
