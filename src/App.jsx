@@ -3,6 +3,7 @@ import "App.css";
 import { StateContext } from "StateContext";
 import Spin from "components/Spin";
 import Main from "components/Main";
+import Error from "components/Error";
 
 const App = () => {
   const {
@@ -13,6 +14,7 @@ const App = () => {
     <>
       {!tabs && !error && <Spin />}
       {tabs && <Main />}
+      {error && <Error error={error} />}
     </>
   );
 };

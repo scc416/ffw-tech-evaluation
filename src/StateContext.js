@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useReducer, useEffect } from "react";
 import { initialState, SHOW_ERROR, FETCH_DATA, CLICK_TAB } from "constants";
+import { fetchData } from "helpers";
 
 const StateContext = React.createContext({ state: initialState });
 
@@ -24,31 +25,7 @@ const StateProvider = (props) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
-    (async () => {
-      try {
-        const tabs = [];
-        const { data } = await axios.get("/tabs");
-        for (const tab of data) {
-          const { label, content_endpoint } = tab;
-          const {
-            data: { content },
-          } = await axios.get(`/${content_endpoint}`);
-          if (Array.isArray(content)) {
-            for (const font of content) {
-              font.colorBlindLabel = font["color-blind-label"];
-              delete font.id;
-              delete font["color-blind-label"];
-            }
-          }
-          const details = { content, label };
-          tabs.push(details);
-        }
-        console.log(tabs);
-        dispatch({ type: FETCH_DATA, payload: { tabs } });
-      } catch (error) {
-        dispatch({ type: SHOW_ERROR, payload: { error } });
-      }
-    })();
+    fetchData(dispatch);
   }, []);
 
   const tabClickHandler = (tabId) => {
