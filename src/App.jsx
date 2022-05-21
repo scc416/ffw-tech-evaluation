@@ -6,13 +6,13 @@ import Main from "components/Main";
 
 function App() {
   const {
-    state: { loading },
+    state: { tabs, error },
   } = useContext(StateContext);
 
   return (
     <>
-      {loading && <Spin />}
-      {!loading && <Main />}
+      {!tabs && !error && <Spin />}
+      {tabs && <Main />}
     </>
   );
 }
