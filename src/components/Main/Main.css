@@ -5,9 +5,14 @@
 
 .TabList {
   display: flex;
+  text-transform: uppercase;
+}
+
+.Header {
+  display: flex;
+  align-items: flex-end;
 }
 
 .Instruction {
-  font-size: 2em;
-  font-weight: 600;
+  font-size: 1.5em;
 }

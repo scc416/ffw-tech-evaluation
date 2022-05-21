@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { StateContext } from "StateContext";
 import TabList from "./TabList";
 import { checkIfShowInstruction } from "helpers";
+import Instruction from "./Instruction";
 
 const Header = () => {
   const {
@@ -11,7 +12,8 @@ const Header = () => {
   const showInstructions = checkIfShowInstruction(tabs[tabId]);
 
   return (
-    <div>
+    <div className="Header">
+      {showInstructions && <Instruction />}
       <TabList />
     </div>
   );
