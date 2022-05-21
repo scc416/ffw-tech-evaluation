@@ -4,23 +4,28 @@
   flex-direction: row-reverse;
   align-items: flex-end;
   justify-content: space-between;
-  padding: 0 1em 1em;
-  min-height: 5em;
+  padding: 2em 1em;
+  flex-wrap: wrap;
 }
 
 .Instruction {
   font-size: 2em;
+  text-align: left;
+  margin-top: 0.5em;
 }
 
 .TabList {
   display: flex;
   text-transform: uppercase;
   font-weight: 700;
+  text-align: right;
+  min-height: 4em;
+  align-items: flex-end;
 }
 
 .tab {
   color: #fd530c;
-  margin-left: 0.7em;
+  width: 8em;
 }
 
 .active {
@@ -117,4 +122,9 @@ ul li::before {
 
 .selected {
   opacity: 0.5;
+}
+
+.TextBox {
+  max-width: 25em;
+  font-size: 1.2em;
 }

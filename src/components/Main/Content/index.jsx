@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { StateContext } from "StateContext";
 import { checkIfIsFonts } from "helpers";
 import FontList from "./FontList";
+import TextBox from "./TextBox";
 
 const Content = () => {
   const { state } = useContext(StateContext);
@@ -13,7 +14,7 @@ const Content = () => {
   return (
     <div className="Content">
       {isFonts && <FontList content={content} />}
-      {!isFonts && content}
+      {!isFonts && <TextBox text={content}/>}
     </div>
   );
 };
