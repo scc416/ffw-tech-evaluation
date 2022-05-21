@@ -9,7 +9,7 @@
 }
 
 .Instruction {
-  font-size: 1.5em;
+  font-size: 2em;
 }
 
 .TabList {
@@ -45,7 +45,8 @@
   grid-template-columns: 2fr 3fr;
   grid-template-rows: 1fr 1fr;
   grid-gap: 3em;
-  align-self: stretch;
+  align-self: flex-start;
+  font-size: 1.5em;
 }
 
 .FontListItem {
@@ -67,17 +68,27 @@
   padding: 0.3em;
   border-radius: 0.5em;
   display: flex;
+  height: 7em;
+  width: 7em;
+  position: relative;
+}
+
+.FontListItem:first-child .color-board:first-child {
   height: 10em;
   width: 10em;
 }
 
 .color-board > div {
-  border-radius: 0.5em;
+  border-radius: 0.35em;
   padding: 0.5em;
+  width: 100%;
 }
 
 .color-board span {
   color: #ffffff80;
+  position: absolute;
+  bottom: 1em;
+  left: 1em;
 }
 
 .Error {
