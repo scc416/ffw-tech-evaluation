@@ -13,8 +13,8 @@ const Header = () => {
 
   return (
     <div className="Header">
-      {showInstructions && <Instruction />}
       <TabList />
+      {showInstructions && <Instruction />}
     </div>
   );
 };

@@ -1,24 +1,26 @@
-.Main {
-  display: flex;
-  flex-direction: column;
-}
-
-.TabList {
-  display: flex;
-  text-transform: uppercase;
-}
-
 .Header {
+  width: 100%;
   display: flex;
+  flex-direction: row-reverse;
   align-items: flex-end;
+  justify-content: space-between;
+  padding: 0 1em 1em;
+  min-height: 3em;
 }
 
 .Instruction {
   font-size: 1.5em;
 }
 
+.TabList {
+  display: flex;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
 .tab {
   color: #fd530c;
+  margin-left: 0.7em;
 }
 
 .active {
@@ -26,6 +28,8 @@
 }
 
 .Content {
+  flex: 1;
+  width: 100%;
   border: #becadf solid 0.3em;
   border-radius: 1em;
 }
