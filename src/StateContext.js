@@ -1,4 +1,3 @@
-import axios from "axios";
 import React, { useReducer, useEffect } from "react";
 import { initialState, SHOW_ERROR, FETCH_DATA, CLICK_TAB } from "constants";
 import { fetchData } from "helpers";
