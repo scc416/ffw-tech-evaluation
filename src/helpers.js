@@ -1,5 +1,5 @@
 import axios from "axios";
-import { SHOW_ERROR, FETCH_DATA } from "constants";
+import { SHOW_ERROR, FETCH_DATA, endpoint } from "constants";
 
 export const checkIfIsFonts = ({ content }) => Array.isArray(content);
 
@@ -15,11 +15,10 @@ const formatData = (tabs, content, label) => {
   tabs.push(details);
 };
 
-
 export const fetchData = async (dispatch) => {
   try {
     const tabs = [];
-    const { data } = await axios.get("/tabs");
+    const { data } = await axios.get(endpoint);
     for (const tab of data) {
       const { label, content_endpoint } = tab;
       const {
@@ -27,11 +26,9 @@ export const fetchData = async (dispatch) => {
       } = await axios.get(`/${content_endpoint}`);
       formatData(tabs, content, label);
     }
-    console.log(tabs);
     dispatch({ type: FETCH_DATA, payload: { tabs } });
   } catch (e) {
     console.log(e);
     dispatch({ type: SHOW_ERROR, payload: { error: e.message } });
   }
 };
-
