@@ -19,7 +19,7 @@ const FontList = ({ content }) => {
     />
   ));
 
-  return <>{lst}</>;
+  return <div className="FontList">{lst}</div>;
 };
 
 export default FontList;

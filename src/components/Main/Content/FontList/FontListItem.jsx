@@ -8,7 +8,18 @@ const FontListItem = ({
 }) => {
   const className = selected ? "FontListItem selected" : "FontListItem";
 
-  return <div {...{ className, onClick: clickHandler }}>{abbr}</div>;
+  return (
+    <div {...{ className, onClick: clickHandler }}>
+      <div className="color-board">
+        <div style={{ background: color }}>
+          <span>{abbr}</span>
+        </div>
+      </div>
+      <ul>
+        <li>{label}</li>
+      </ul>
+    </div>
+  );
 };
 
 export default FontListItem;

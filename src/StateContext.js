@@ -22,7 +22,6 @@ const StateProvider = (props) => {
       return { ...state, tabId };
     },
     [CLICK_FONT](state, { payload: { fontId } }) {
-      console.log(fontId);
       return { ...state, fontId };
     },
   };

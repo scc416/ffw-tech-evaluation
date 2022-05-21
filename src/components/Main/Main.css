@@ -34,21 +34,55 @@
   border: #becadf solid 0.3em;
   border-radius: 1em;
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   overflow: scroll;
-  position: relative;
+  padding: 3em;
+}
+
+.FontList {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 3em;
+  align-self: stretch;
 }
 
 .FontListItem {
   display: flex;
+  justify-content: center;
+}
+
+.FontListItem:first-child {
+  flex-direction: column;
+  grid-area: 1/1/3/2;
+}
+
+.FontListItem > ul {
+  flex: 1;
+}
+
+.color-board {
+  border: #000001 solid 0.1em;
+  padding: 0.3em;
+  border-radius: 0.5em;
+  display: flex;
+  height: 10em;
+  width: 10em;
+}
+
+.color-board > div {
+  border-radius: 0.5em;
+  padding: 0.5em;
+}
+
+.color-board span {
+  color: #ffffff80;
 }
 
 .Error {
   text-align: center;
-  color: red;
+  color: #cc0000;
 }
 
 .selected {
