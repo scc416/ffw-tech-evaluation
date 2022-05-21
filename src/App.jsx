@@ -4,7 +4,7 @@ import { StateContext } from "StateContext";
 import Spin from "components/Spin";
 import Main from "components/Main";
 
-function App() {
+const App = () => {
   const {
     state: { tabs, error },
   } = useContext(StateContext);
@@ -15,6 +15,6 @@ function App() {
       {tabs && <Main />}
     </>
   );
-}
+};
 
 export default App;

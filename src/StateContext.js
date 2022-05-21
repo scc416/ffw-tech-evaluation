@@ -23,15 +23,17 @@ const StateProvider = (props) => {
   useEffect(() => {
     (async () => {
       try {
-        const tabs = {};
+        const tabs = [];
         const { data } = await axios.get("/tabs");
         for (const tab of data) {
           const { label, content_endpoint } = tab;
           const {
             data: { content },
           } = await axios.get(`/${content_endpoint}`);
-          tabs[label] = content;
+          const details = {content, label};
+          tabs.push(details);
         }
+        console.log(tabs)
         dispatch({ type: FETCHED_TABS, payload: { tabs } });
       } catch (error) {
         dispatch({ type: SHOW_ERROR, payload: { error } });
