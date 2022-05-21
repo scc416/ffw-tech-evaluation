@@ -1,11 +1,11 @@
-import TabList from "./TabList";
 import Content from "./Content";
+import Header from "./Header";
 import "./Main.css";
 
 const Main = () => {
   return (
     <div className="Main">
-      <TabList />
+      <Header />
       <Content />
     </div>
   );

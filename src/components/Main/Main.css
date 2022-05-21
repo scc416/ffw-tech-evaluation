@@ -2,3 +2,12 @@
   display: flex;
   flex-direction: column;
 }
+
+.TabList {
+  display: flex;
+}
+
+.Instruction {
+  font-size: 2em;
+  font-weight: 600;
+}

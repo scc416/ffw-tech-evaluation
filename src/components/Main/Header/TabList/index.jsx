@@ -10,7 +10,7 @@ const TabList = () => {
   const lst = tabs.map(({ label }) => (
     <TabListItem {...{ label, key: label }} />
   ));
-  return <div>{lst}</div>;
+  return <div className="TabList">{lst}</div>;
 };
 
 export default TabList;
