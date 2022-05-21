@@ -1,4 +1,4 @@
-.Header {
+header {
   width: 100%;
   display: flex;
   flex-direction: row-reverse;
@@ -32,7 +32,7 @@
   color: #becadf;
 }
 
-.Content {
+main {
   width: 100%;
   height: 100%;
   border: #becadf solid 0.2em;

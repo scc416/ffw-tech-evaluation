@@ -9,10 +9,10 @@ const Header = () => {
   const showInstructions = checkIfIsFonts(state);
 
   return (
-    <div className="Header">
+    <header>
       <TabList />
       {showInstructions && <Instruction />}
-    </div>
+    </header>
   );
 };
 

@@ -1,4 +1,4 @@
-import Content from "./Content";
+import Content from "./Main";
 import Header from "./Header";
 import "./Main.css";
 

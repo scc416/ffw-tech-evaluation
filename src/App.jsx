@@ -2,7 +2,7 @@ import { useContext } from "react";
 import "App.css";
 import { StateContext } from "StateContext";
 import Spin from "components/Spin";
-import Main from "components/Main";
+import Main from "components/Content";
 import Error from "components/Error";
 
 const App = () => {

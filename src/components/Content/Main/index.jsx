@@ -12,10 +12,10 @@ const Content = () => {
   const { content } = tabs[tabId];
   
   return (
-    <div className="Content">
+    <main>
       {isFonts && <FontList content={content} />}
       {!isFonts && <TextBox text={content}/>}
-    </div>
+    </main>
   );
 };
 
