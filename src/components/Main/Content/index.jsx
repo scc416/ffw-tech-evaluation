@@ -6,6 +6,7 @@ import FontList from "./FontList";
 const Content = () => {
   const {
     state: { tabs, tabId },
+    fontClickHandler,
   } = useContext(StateContext);
 
   const details = tabs[tabId];
@@ -13,7 +14,7 @@ const Content = () => {
   const { content } = details;
   return (
     <div className="Content">
-      {isFonts && <FontList content={content} />}
+      {isFonts && <FontList {...{ content, fontClickHandler }} />}
       {!isFonts && content}
     </div>
   );

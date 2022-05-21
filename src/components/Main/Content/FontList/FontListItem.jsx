@@ -1,5 +1,15 @@
-const FontListItem = ({ abbr, color, colorBlindLabel, label }) => {
-  return <div className="FontListItem">{abbr}</div>;
+const FontListItem = ({
+  abbr,
+  color,
+  colorBlindLabel,
+  label,
+  clickHandler,
+}) => {
+  return (
+    <div className="FontListItem" onClick={clickHandler}>
+      {abbr}
+    </div>
+  );
 };
 
 export default FontListItem;
