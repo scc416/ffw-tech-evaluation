@@ -1,5 +1,11 @@
 import { useReducer, useEffect, createContext } from "react";
-import { initialState, SHOW_ERROR, FETCH_DATA, CLICK_TAB } from "constants";
+import {
+  initialState,
+  SHOW_ERROR,
+  FETCH_DATA,
+  CLICK_TAB,
+  CLICK_FONT,
+} from "constants";
 import { fetchData } from "helpers";
 
 const StateContext = createContext({ state: initialState });
@@ -14,6 +20,9 @@ const StateProvider = (props) => {
     },
     [CLICK_TAB](state, { payload: { tabId } }) {
       return { ...state, tabId };
+    },
+    [CLICK_FONT](state, { payload: { fontId } }) {
+      return { ...state, fontId };
     },
   };
 
@@ -31,8 +40,12 @@ const StateProvider = (props) => {
     dispatch({ type: CLICK_TAB, payload: { tabId } });
   };
 
+  const fontClickHandler = (fontId) => {
+    dispatch({ type: CLICK_TAB, payload: { fontId } });
+  };
+
   return (
-    <StateContext.Provider value={{ state, tabClickHandler }}>
+    <StateContext.Provider value={{ state, tabClickHandler, fontClickHandler }}>
       {props.children}
     </StateContext.Provider>
   );
