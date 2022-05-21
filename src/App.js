@@ -1,7 +1,11 @@
+import { useContext } from "react";
 import "./App.css";
+import { StateContext } from "./StateContext";
 
 function App() {
-  return <></>;
+  const { state } = useContext(StateContext);
+
+  return <>hello{state.loading && "LOADING"}</>;
 }
 
 export default App;
