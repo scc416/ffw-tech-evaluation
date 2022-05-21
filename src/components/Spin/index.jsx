@@ -1,7 +1,7 @@
 import "./Spin.css";
 
 const Spin = () => {
-  return <div className="spin" />;
+  return <div className="Spin" />;
 };
 
 export default Spin;
