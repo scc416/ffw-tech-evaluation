@@ -47,16 +47,16 @@
 
 .FontList {
   display: grid;
-  grid-template-columns: 2fr 3fr;
+  grid-template-columns: 4fr 7fr;
   grid-template-rows: 1fr 1fr;
-  grid-gap: 3em;
+  grid-row-gap: 2em;
+  grid-column-gap: 4em;
   align-self: flex-start;
   font-size: 1.5em;
 }
 
 .FontListItem {
   display: flex;
-  justify-content: center;
 }
 
 .FontListItem:first-child {
@@ -65,9 +65,12 @@
 }
 
 .FontListItem > ul {
-  flex: 1;
   list-style: none;
   margin-left: 1em;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
 }
 
 .FontListItem:first-child > ul {
@@ -88,19 +91,23 @@ ul li::before {
 }
 
 .color-board {
-  border: #000001 solid 0.07em;
-  padding: 0.2em;
+  border: #000001 solid 0.05em;
+  padding: 0.15em;
   border-radius: 0.8em;
   display: flex;
-  height: 5em;
-  width: 5em;
   position: relative;
   font-size: 1.5em;
   font-weight: 700;
+  aspect-ratio: 1 / 1;
+  max-width: 5em;
+  max-height: 5em;
 }
 
-.FontListItem:first-child .color-board:first-child {
+.FontListItem:first-child .color-board {
+  width: 80%;
   font-size: 2em;
+  max-width: none;
+  max-height: none;
 }
 
 .color-board > div {
