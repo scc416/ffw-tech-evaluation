@@ -11,7 +11,7 @@ const Content = () => {
   const isFonts = checkIfIsFonts(details);
   const { content } = details;
   return (
-    <div>
+    <div className="Content">
       {isFonts && content.map((x) => <div key={x.id}>{x.id}</div>)}
       {!isFonts && content}
     </div>

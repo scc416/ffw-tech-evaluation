@@ -24,3 +24,8 @@
 .active {
   color: #becadf;
 }
+
+.Content {
+  border: #becadf solid 0.3em;
+  border-radius: 1em;
+}
