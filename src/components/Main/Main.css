@@ -40,8 +40,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: scroll;
   padding: 7.5%;
+  overflow-x: hidden;
 }
 
 .FontList {
@@ -53,7 +53,8 @@
 .FontListItem {
   display: flex;
   align-items: flex-start;
-  margin-bottom: 5%;
+  flex-direction: column;
+  margin-bottom: 15%;
   max-width: 100%;
 }
 
@@ -68,36 +69,34 @@
   -moz-hyphens: auto;
   -ms-hyphens: auto;
   hyphens: auto;
-  flex: 1;
-  width: 65%;
-  max-width: calc(100% - 2em);
-  overflow-x: hidden;
+  padding-left: 1em;
 }
 
 .color-board {
   border: #000001 solid 0.05em;
   padding: 0.15em;
-  border-radius: 0.8em;
+  border-radius: 20%;
   display: flex;
   position: relative;
   font-size: 1.5em;
   font-weight: 700;
   aspect-ratio: 1 / 1;
-  width: 35%;
+  flex: 1;
   min-width: 2em;
   min-height: 2em;
+  width: 50%;
 }
 
 .color-board > div {
-  border-radius: 0.65em;
+  border-radius: 18%;
   width: 100%;
 }
 
 .color-board span {
   color: #ffffff80;
   position: absolute;
-  bottom: 0.5em;
-  left: 0.7em;
+  bottom: 8%;
+  left: 14%;
 }
 
 .Error {
@@ -127,6 +126,17 @@ ul li::before {
   line-height: 1em;
 }
 
+@media (min-width: 420px) {
+  .FontListItem {
+    flex-direction: row;
+  }
+
+  .FontListItem > ul {
+    max-width: 65%;
+    padding-left: 40px;
+  }
+}
+
 @media (min-width: 768px) {
   .FontListItem > ul {
     margin-left: 1em;
@@ -150,6 +160,7 @@ ul li::before {
     font-size: 2em;
     max-width: none;
     max-height: none;
+    flex: none;
   }
 
   .FontListItem {
@@ -160,5 +171,6 @@ ul li::before {
     margin-left: 0em;
     width: auto;
     padding-left: 0.9em;
+    max-width: none;
   }
 }
