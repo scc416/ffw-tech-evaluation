@@ -33,6 +33,13 @@ const StateProvider = (props) => {
           const {
             data: { content },
           } = await axios.get(`/${content_endpoint}`);
+          if (Array.isArray(content)) {
+            for (const font of content) {
+              font.colorBlindLabel = font["color-blind-label"];
+              delete font.id;
+              delete font["color-blind-label"];
+            }
+          }
           const details = { content, label };
           tabs.push(details);
         }

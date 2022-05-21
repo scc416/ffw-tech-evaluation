@@ -32,4 +32,9 @@
   width: 100%;
   border: #becadf solid 0.3em;
   border-radius: 1em;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }

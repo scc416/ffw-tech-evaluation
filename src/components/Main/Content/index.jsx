@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { StateContext } from "StateContext";
 import { checkIfIsFonts } from "helpers";
+import FontList from "./FontList";
 
 const Content = () => {
   const {
@@ -12,7 +13,7 @@ const Content = () => {
   const { content } = details;
   return (
     <div className="Content">
-      {isFonts && content.map((x) => <div key={x.id}>{x.id}</div>)}
+      {isFonts && <FontList content={content} />}
       {!isFonts && content}
     </div>
   );
