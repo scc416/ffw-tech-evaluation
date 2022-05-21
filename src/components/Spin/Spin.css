@@ -1,0 +1,16 @@
+.spin {
+  display: block;
+  width: 4em;
+  height: 4em;
+  margin: 3em auto;
+  border: 0.3em solid transparent;
+  border-radius: 50%;
+  border-top-color: #fe540d;
+  animation: spin 1s ease infinite;
+}
+
+@keyframes spin {
+  to {
+    -webkit-transform: rotateZ(360deg);
+  }
+}
