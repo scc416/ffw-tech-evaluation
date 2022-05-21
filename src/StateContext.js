@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useReducer, useEffect } from "react";
-import { initialState, SHOW_ERROR, FETCHED_TABS } from "constants";
+import { initialState, SHOW_ERROR, FETCH_DATA, CLICK_TAB } from "constants";
 
 const StateContext = React.createContext({ state: initialState });
 
@@ -9,8 +9,11 @@ const StateProvider = (props) => {
     [SHOW_ERROR](state, { payload: { error } }) {
       return { ...state, error };
     },
-    [FETCHED_TABS](state, { payload: { tabs } }) {
+    [FETCH_DATA](state, { payload: { tabs } }) {
       return { ...state, tabs };
+    },
+    [CLICK_TAB](state, { payload: { tabId } }) {
+      return { ...state, tabId };
     },
   };
 
@@ -30,19 +33,23 @@ const StateProvider = (props) => {
           const {
             data: { content },
           } = await axios.get(`/${content_endpoint}`);
-          const details = {content, label};
+          const details = { content, label };
           tabs.push(details);
         }
-        console.log(tabs)
-        dispatch({ type: FETCHED_TABS, payload: { tabs } });
+        console.log(tabs);
+        dispatch({ type: FETCH_DATA, payload: { tabs } });
       } catch (error) {
         dispatch({ type: SHOW_ERROR, payload: { error } });
       }
     })();
   }, []);
 
+  const tabClickHandler = (tabId) => {
+    dispatch({ type: CLICK_TAB, payload: { tabId } });
+  };
+
   return (
-    <StateContext.Provider value={{ state }}>
+    <StateContext.Provider value={{ state, tabClickHandler }}>
       {props.children}
     </StateContext.Provider>
   );

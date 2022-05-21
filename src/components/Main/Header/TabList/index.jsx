@@ -5,10 +5,13 @@ import TabListItem from "./TabListItem";
 const TabList = () => {
   const {
     state: { tabs },
+    tabClickHandler,
   } = useContext(StateContext);
 
-  const lst = tabs.map(({ label }) => (
-    <TabListItem {...{ label, key: label }} />
+  const lst = tabs.map(({ label }, i) => (
+    <TabListItem
+      {...{ label, key: label, clickHandler: () => tabClickHandler(i) }}
+    />
   ));
   return <div className="TabList">{lst}</div>;
 };

@@ -1,5 +1,5 @@
-const TabListItem = ({ label }) => {
-  return <div>{label}</div>;
+const TabListItem = ({ label, clickHandler }) => {
+  return <div onClick={clickHandler}>{label}</div>;
 };
 
 export default TabListItem;
