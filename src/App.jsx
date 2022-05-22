@@ -1,5 +1,5 @@
-import { useContext } from "react";
 import "App.css";
+import { useContext } from "react";
 import { StateContext } from "StateContext";
 import Spin from "components/Spin";
 import Main from "components/Content";
@@ -8,14 +8,15 @@ import Error from "components/Error";
 const App = () => {
   const {
     state: { tabs, error },
+    keyDownHandler,
   } = useContext(StateContext);
 
   return (
-    <>
+    <div onKeyDown={keyDownHandler} tabIndex="-1">
       {!tabs && !error && <Spin />}
       {tabs && <Main />}
       {error && <Error error={error} />}
-    </>
+    </div>
   );
 };
 

@@ -6,7 +6,7 @@ import {
   CLICK_TAB,
   CLICK_FONT,
 } from "constants";
-import { fetchData } from "helpers";
+import { fetchData, keyDownActionDispatcher } from "helpers";
 
 const StateContext = createContext({ state: initialState });
 
@@ -16,7 +16,7 @@ const StateProvider = (props) => {
       return { ...state, error };
     },
     [FETCH_DATA](state, { payload: { tabs } }) {
-      return { ...state, tabs };
+      return { ...state, tabs, tabId: 0 };
     },
     [CLICK_TAB](state, { payload: { tabId } }) {
       return { ...state, tabId };
@@ -44,8 +44,14 @@ const StateProvider = (props) => {
     dispatch({ type: CLICK_FONT, payload: { fontId } });
   };
 
+  const keyDownHandler = ({ key }) => {
+    keyDownActionDispatcher(key, state, dispatch);
+  };
+
   return (
-    <StateContext.Provider value={{ state, tabClickHandler, fontClickHandler }}>
+    <StateContext.Provider
+      value={{ state, tabClickHandler, fontClickHandler, keyDownHandler }}
+    >
       {props.children}
     </StateContext.Provider>
   );

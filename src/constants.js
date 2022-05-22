@@ -1,7 +1,7 @@
 export const instruction = "Please select one font";
 export const endPoint = "/tabs";
 
-export const initialState = { error: null, tabs: null, tabId: 0, fontId: null };
+export const initialState = { error: null };
 
 export const SHOW_ERROR = "SHOW_ERROR";
 export const FETCH_DATA = "FETCH_DATA";

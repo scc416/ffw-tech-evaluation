@@ -1,5 +1,11 @@
 import axios from "axios";
-import { SHOW_ERROR, FETCH_DATA, endPoint } from "constants";
+import {
+  CLICK_TAB,
+  SHOW_ERROR,
+  FETCH_DATA,
+  endPoint,
+  CLICK_FONT,
+} from "constants";
 
 export const checkIfIsFonts = (state) => {
   const { tabs, tabId } = state;
@@ -38,5 +44,32 @@ export const fetchData = async (dispatch) => {
     dispatch({ type: FETCH_DATA, payload: { tabs } });
   } catch ({ message }) {
     dispatch({ type: SHOW_ERROR, payload: { error: message } });
+  }
+};
+
+export const keyDownActionDispatcher = (key, state, dispatch) => {
+  const { tabs, tabId } = state;
+
+  if (!tabs) return;
+  const num = parseInt(key);
+  if (num > 0 && num <= tabs.length) {
+    const tabId = num - 1;
+    return dispatch({ type: CLICK_TAB, payload: { tabId } });
+  }
+
+  const isFonts = checkIfIsFonts(state);
+
+  if (!isFonts) return;
+
+  const { content } = tabs[tabId];
+
+  for (let i = 0; i < content.length; i++) {
+    const tab = content[i];
+    const { abbr } = tab;
+    const char = abbr[0].toLowerCase();
+    const found = key === char;
+    if (found) {
+      return dispatch({ type: CLICK_FONT, payload: { fontId: i } });
+    }
   }
 };
