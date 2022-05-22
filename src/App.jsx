@@ -12,7 +12,7 @@ const App = () => {
   } = useContext(StateContext);
 
   return (
-    <div onKeyDown={keyDownHandler} tabIndex="-1">
+    <div onKeyDown={keyDownHandler} tabIndex="0">
       {!tabs && !error && <Spin />}
       {tabs && <Main />}
       {error && <Error error={error} />}
