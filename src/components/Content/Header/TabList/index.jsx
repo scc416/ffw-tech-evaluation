@@ -15,7 +15,7 @@ const TabList = () => {
         key: i,
         clickHandler: () => tabClickHandler(i),
         active: i === tabId,
-        accesskey: i + 1,
+        accessKey: i + 1,
       }}
     />
   ));

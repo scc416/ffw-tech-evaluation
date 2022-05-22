@@ -1,8 +1,8 @@
-const TabListItem = ({ label, clickHandler, active, accesskey }) => {
+const TabListItem = ({ label, clickHandler, active, accessKey }) => {
   const className = active ? "tab active" : "tab";
 
   return (
-    <div {...{ className, onClick: clickHandler, accesskey }}>{label}</div>
+    <div {...{ className, accessKey, onClick: clickHandler }}>{label}</div>
   );
 };
 
