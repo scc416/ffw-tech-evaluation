@@ -7,11 +7,11 @@ const FontListItem = ({
   selected,
 }) => {
   const className = selected ? "FontListItem selected" : "FontListItem";
-
+  const accesskey = abbr[0].toLowerCase();
   return (
-    <div {...{ className, onClick: clickHandler }}>
+    <div {...{ className, accesskey, onClick: clickHandler }}>
       <div aria-label={colorBlindLabel} className="color-board">
-        <div style={{ background: color }} >
+        <div style={{ background: color }}>
           <span>{abbr}</span>
         </div>
       </div>
