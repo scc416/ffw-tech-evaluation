@@ -4,7 +4,7 @@ header {
   flex-direction: row-reverse;
   align-items: flex-end;
   justify-content: space-between;
-  padding: 0 1em 2em;
+  padding: 0 1% 4%;
   flex-wrap: wrap;
 }
 
@@ -55,7 +55,7 @@ main {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-  margin-bottom: 15%;
+  margin-bottom: 8%;
   max-width: 100%;
 }
 
@@ -72,6 +72,7 @@ main {
   hyphens: auto;
   padding-left: 1em;
   font-size: 0.95em;
+  width: 75%;
 }
 
 .color-board {
@@ -134,13 +135,13 @@ ul li::before {
   }
 
   .FontListItem > ul {
-    max-width: 65%;
     padding-left: 40px;
   }
 }
 
 @media (min-width: 768px) {
   .FontListItem > ul {
+    width: 65%;
     margin-left: 1em;
   }
 
