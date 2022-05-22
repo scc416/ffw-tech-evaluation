@@ -10,8 +10,8 @@ const FontListItem = ({
 
   return (
     <div {...{ className, onClick: clickHandler }}>
-      <div className="color-board">
-        <div style={{ background: color }}>
+      <div aria-label={colorBlindLabel} className="color-board">
+        <div style={{ background: color }} >
           <span>{abbr}</span>
         </div>
       </div>
