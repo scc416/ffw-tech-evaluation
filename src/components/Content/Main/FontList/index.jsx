@@ -1,3 +1,4 @@
+import "./FontList.css"
 import { useContext } from "react";
 import { StateContext } from "StateContext";
 import FontListItem from "./FontListItem";
